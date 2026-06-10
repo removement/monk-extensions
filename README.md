@@ -2,6 +2,8 @@
 
 Optional block editor extensions built for [Monk](https://monkwp.com) themes and any block-based WordPress theme. Each feature can be turned on or off independently from **Settings → Monk Extensions**.
 
+**Repository:** [github.com/removement/monk-extensions](https://github.com/removement/monk-extensions)
+
 **Requires:** WordPress 6.4+, PHP 7.4+  
 **License:** [GPL-2.0-or-later](https://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -24,13 +26,40 @@ All extensions are **enabled by default** on activation.
 
 ## Installation
 
-1. Clone or copy this repository into `wp-content/plugins/monk-extensions`.
-2. Activate **Monk Extensions** from the WordPress **Plugins** screen.
-3. Open **Settings → Monk Extensions** to enable or disable individual features.
+### Option A: Git clone
 
-```bash
-git clone <your-repo-url> wp-content/plugins/monk-extensions
-```
+1. Open a terminal and go to your **WordPress root** — the folder that contains `wp-content`, `wp-admin`, and `wp-config.php` (not the theme or plugin folder itself).
+
+   ```bash
+   cd /path/to/your/wordpress
+   ```
+
+2. Clone the repository into the plugins directory:
+
+   ```bash
+   git clone https://github.com/removement/monk-extensions.git wp-content/plugins/monk-extensions
+   ```
+
+   Git creates `wp-content/plugins/monk-extensions/` with the plugin files. You should end up with `wp-content/plugins/monk-extensions/monk-extensions.php`.
+
+   **Already inside `wp-content/plugins`?** Clone into the current folder instead:
+
+   ```bash
+   cd wp-content/plugins
+   git clone https://github.com/removement/monk-extensions.git monk-extensions
+   ```
+
+### Option B: Download ZIP
+
+1. Download the repository from [github.com/removement/monk-extensions](https://github.com/removement/monk-extensions) (**Code → Download ZIP**).
+2. Unzip the archive.
+3. Move the `monk-extensions` folder into `wp-content/plugins/` on your server.
+
+### Activate
+
+1. In WordPress admin, go to **Plugins**.
+2. Activate **Monk Extensions**.
+3. Open **Settings → Monk Extensions** to enable or disable individual features.
 
 Works with Monk themes out of the box and does not require a Monk theme to be active.
 
