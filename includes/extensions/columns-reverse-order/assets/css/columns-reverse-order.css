@@ -1,0 +1,64 @@
+/* Reverse order for columns block on desktop and tablet only */
+@media (min-width: 782px) {
+	.wp-block-columns.has-reverse-order,
+	.is-layout-flex.wp-block-columns.has-reverse-order {
+		flex-direction: row-reverse !important;
+	}
+}
+
+/* Ensure mobile layout remains unchanged */
+@media (max-width: 781px) {
+	.wp-block-columns.has-reverse-order,
+	.is-layout-flex.wp-block-columns.has-reverse-order {
+		flex-direction: column !important;
+	}
+}
+
+/* Editor: continue the Columns settings panel for the reverse-order toggle */
+.block-editor-block-inspector
+	.components-tools-panel:has(+ .monk-columns-reverse-order-control) {
+	padding-bottom: 0;
+}
+
+.block-editor-block-inspector
+	.monk-columns-reverse-order-control.components-tools-panel {
+	border-top: none;
+	margin-top: 0;
+	padding-top: 16px;
+}
+
+.block-editor-block-inspector
+	.monk-columns-reverse-order-control
+	.components-tools-panel-header {
+	display: none;
+}
+
+.block-editor-block-inspector
+	.monk-columns-reverse-order-control:not(.components-tools-panel) {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 16px;
+}
+
+.block-editor-block-inspector
+	.monk-columns-reverse-order-control
+	.components-base-control {
+	margin-bottom: 0;
+	max-width: 100%;
+}
+
+.block-editor-block-inspector
+	.monk-columns-reverse-order-control
+	.components-toggle-control {
+	width: 100%;
+}
+
+.block-editor-block-inspector
+	.monk-columns-reverse-order-control
+	.components-base-control__help {
+	margin-top: 8px;
+	margin-bottom: 0;
+	line-height: 1.5;
+}

@@ -1,0 +1,196 @@
+/* Admin shell — matches Gutenberg experiments-wp-admin page. */
+#wpwrap {
+	background: var(--wpds-color-fg-content-neutral, #1e1e1e);
+	overflow-y: auto;
+}
+
+body {
+	background: #fff;
+}
+
+#wpcontent {
+	padding-inline-start: 0;
+}
+
+#wpbody-content {
+	padding-bottom: 0;
+}
+
+#wpbody-content > div:not(.boot-layout-container):not(#screen-meta) {
+	display: none;
+}
+
+#wpfooter {
+	display: none;
+}
+
+ul#adminmenu a.wp-has-current-submenu::after,
+ul#adminmenu > li.current > a.current::after {
+	border-inline-end-color: #fff;
+}
+
+@media (min-width: 782px) {
+	#wpwrap {
+		overflow-y: initial;
+	}
+}
+
+/* Page layout — mirrors @wordpress/boot Page + experiments form. */
+.monk-extensions-page {
+	text-wrap: pretty;
+	background-color: var(--wpds-color-bg-surface-neutral, #fcfcfc);
+	color: var(--wpds-color-fg-content-neutral, #1e1e1e);
+	display: flex;
+	flex-flow: column;
+	min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
+	position: relative;
+	z-index: 1;
+}
+
+.monk-extensions-page__header {
+	background: var(--wpds-color-bg-surface-neutral-strong, #fff);
+	border-block-end: var(--wpds-border-width-xs, 1px) solid var(--wpds-color-stroke-surface-neutral-weak, #e4e4e4);
+	inset-block-start: 0;
+	padding: var(--wpds-dimension-padding-lg, 16px) var(--wpds-dimension-padding-2xl, 24px);
+	position: sticky;
+	z-index: 1;
+}
+
+.monk-extensions-page__header-title {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.monk-extensions-page__header-subtitle {
+	margin: 0;
+	padding-block-end: var(--wpds-dimension-padding-xs, 4px);
+	color: var(--wpds-color-fg-content-neutral-weak, #707070);
+	font-size: 13px;
+	line-height: 1.5;
+	max-width: 60em;
+}
+
+.monk-extensions-page__form {
+	margin: 0 auto;
+	max-width: 680px;
+	padding: 24px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.monk-extensions-page__loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 240px;
+}
+
+/* Card groups — dataforms-layouts-card style. */
+.monk-extensions-card {
+	background: var(--wpds-color-bg-surface-neutral-strong, #fff);
+	border: var(--wpds-border-width-xs, 1px) solid var(--wpds-color-stroke-surface-neutral-weak, #e4e4e4);
+	border-radius: var(--wpds-border-radius-sm, 4px);
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+
+.monk-extensions-card__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	border-block-end: var(--wpds-border-width-xs, 1px) solid var(--wpds-color-stroke-surface-neutral-weak, #e4e4e4);
+	cursor: pointer;
+	list-style: none;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+.monk-extensions-card__header::-webkit-details-marker {
+	display: none;
+}
+
+.monk-extensions-card__header::after {
+	content: "";
+	width: 0.5rem;
+	height: 0.5rem;
+	border-inline-end: 2px solid currentColor;
+	border-block-end: 2px solid currentColor;
+	transform: rotate(45deg);
+	transition: transform 0.15s ease;
+	flex-shrink: 0;
+	margin-inline-start: 12px;
+	opacity: 0.7;
+}
+
+.monk-extensions-card[open] > .monk-extensions-card__header::after {
+	transform: rotate(-135deg);
+	margin-block-start: 4px;
+}
+
+.monk-extensions-card__body {
+	padding: 0;
+}
+
+.monk-extensions-card__item {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 12px 16px;
+	border-block-end: var(--wpds-border-width-xs, 1px) solid var(--wpds-color-stroke-surface-neutral-weak, #e4e4e4);
+}
+
+.monk-extensions-card__item:last-child {
+	border-block-end: 0;
+}
+
+.monk-extensions-card__item-toggle {
+	flex-shrink: 0;
+	padding-block-start: 2px;
+}
+
+.monk-extensions-card__item-toggle .components-form-toggle {
+	margin: 0;
+}
+
+.monk-extensions-card__item-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.monk-extensions-card__item-label {
+	display: block;
+	margin: 0;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.4;
+	cursor: pointer;
+}
+
+.monk-extensions-card__item-description {
+	margin: 4px 0 0;
+	color: var(--wpds-color-fg-content-neutral-weak, #707070);
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.monk-extensions-page__snackbars {
+	position: fixed;
+	inset-inline-start: 0;
+	inset-block-end: 16px;
+	padding-inline: 16px;
+	width: 100%;
+	box-sizing: border-box;
+	pointer-events: none;
+	z-index: 100000;
+}
+
+.monk-extensions-page__snackbars .components-snackbar-list {
+	pointer-events: auto;
+}
